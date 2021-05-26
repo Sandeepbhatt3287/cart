@@ -8,9 +8,9 @@ class CartItem extends React.Component{
                     <img style={styles.image}/>
                 </div>
                 <div className="right-block">
-                    <div>Phone</div>
-                    <div>Rs 1000</div>
-                    <div>QTY:1</div>
+                    <div style={{fontSize:25}}>Phone</div>
+                    <div style={{color: '#777'}}>Rs 1000</div>
+                    <div style={{color: '#777'}}>QTY:1</div>
                     <div className="cart-item-action">
                         {/* Buttons */}
 
@@ -25,7 +25,8 @@ const styles = {
     image:{
         height: 110,
         width:110,
-        borderRadius:4
+        borderRadius:4,
+        background:'blue'
     }
 }
 
