@@ -11,6 +11,10 @@ class CartItem extends React.Component{
             img: ''
         }
     }
+    // using arrow function
+     increaseQuantity =()=> {
+         console.log('this',this.state);
+     }
     render(){
 
         // defining variables
@@ -27,9 +31,22 @@ class CartItem extends React.Component{
                     <div style={{color: '#777'}}>Quantity: {qty}</div>
                     <div className="cart-item-action">
                         {/*  Adding Buttons */}
-                        <img alt="Increase" className="action-icons" src="https://image.flaticon.com/icons/png/512/1828/1828817.png"/>
-                        <img alt="Decrease" className="action-icons" src="https://image.flaticon.com/icons/png/128/2569/2569198.png"/>
-                        <img alt="Delete" className="action-icons" src="https://image.flaticon.com/icons/png/128/3221/3221897.png"/>
+                        <img 
+                        alt="Increase"
+                         className="action-icons" 
+                         src="https://image.flaticon.com/icons/png/512/1828/1828817.png"
+                         onClick= {this.increaseQuantity}
+                         />
+                        <img
+                         alt="Decrease" 
+                         className="action-icons" 
+                         src="https://image.flaticon.com/icons/png/128/2569/2569198.png"
+                         />
+                        <img 
+                        alt="Delete" 
+                        className="action-icons" 
+                        src="https://image.flaticon.com/icons/png/128/3221/3221897.png"
+                        />
                     </div>
                 </div>
             </div>
