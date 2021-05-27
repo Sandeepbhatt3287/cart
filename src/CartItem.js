@@ -10,10 +10,16 @@ class CartItem extends React.Component{
             qty:1,
             img: ''
         }
+        // this.increaseQuantity.bind(this);
     }
     // using arrow function
      increaseQuantity =()=> {
-         console.log('this',this.state);
+        //  console.log('this',this.state);
+        
+        // setstate form 1
+        this.setState({
+            qty: this.state.qty + 1
+        });
      }
     render(){
 
