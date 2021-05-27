@@ -15,12 +15,20 @@ class CartItem extends React.Component{
     // using arrow function
      increaseQuantity =()=> {
         //  console.log('this',this.state);
-        
-        // setstate form 1
-        this.setState({
-            qty: this.state.qty + 1
+
+        // // setstate form 1
+        // this.setState({
+        //     qty: this.state.qty + 1
+        // });
+    
+        // setstate form 2
+        this.setState((prevState)=>{
+            return {
+                qty: prevState.qty +1
+            }
         });
-     }
+
+    }
     render(){
 
         // defining variables
