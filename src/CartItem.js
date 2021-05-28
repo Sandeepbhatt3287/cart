@@ -11,22 +11,36 @@ class CartItem extends React.Component{
             img: ''
         }
         // this.increaseQuantity.bind(this);
+        this.testing();
     }
+
+    testing(){
+        const promise = new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve('done');
+            },3000);
+        })
+        promise.then(()=>{
+            // setState acts like a synchronus call
+            this.setState({qty:10});
+            console.log('state',this.state);
+        });
+     } 
     // using arrow function
      increaseQuantity =()=> {
         //  console.log('this',this.state);
 
-        // // setstate form 1
-        // this.setState({
-        //     qty: this.state.qty + 1
-        // },()=>{});    //adding callback
+        // setstate form 1
+        this.setState({
+            qty: this.state.qty + 1
+        },()=>{});    //adding callback
     
         // setstate form 2 -if prevstate requied use this
-        this.setState((prevState)=>{
-            return {
-                qty: prevState.qty +1
-            }
-        });
+        // this.setState((prevState)=>{
+        //     return {
+        //         qty: prevState.qty +1
+        //     }
+        // });
 
     }
 
