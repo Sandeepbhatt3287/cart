@@ -2,50 +2,6 @@ import React from 'react';
 
 class CartItem extends React.Component{
    
-
-    // testing(){
-    //     const promise = new Promise((resolve,reject)=>{
-    //         setTimeout(()=>{
-    //             resolve('done');
-    //         },3000);
-    //     })
-    //     promise.then(()=>{
-    //         // setState acts like a synchronus call
-    //         this.setState({qty: this.state.qty + 10});
-    //         this.setState({qty: this.state.qty + 10});
-    //         this.setState({qty: this.state.qty + 10});
-    //         console.log('state',this.state);
-    //     });
-    //  } 
-    // using arrow function
-     increaseQuantity =()=> {
-        //  console.log('this',this.state);
-
-        // setstate form 1
-        this.setState({
-            qty: this.state.qty + 1
-        },()=>{});    //adding callback
-    
-        // setstate form 2 -if prevstate requied use this
-        // this.setState((prevState)=>{
-        //     return {
-        //         qty: prevState.qty +1
-        //     }
-        // });
-
-    }
-
-    // decreasing the Quantity
-    decreaseQuantity = ()=>{
-        const{qty} = this.state;
-        if(qty===0){
-            return;
-        }
-        this.setState({
-            qty:this.state.qty-1
-        });
-    }
-
        render(){
           console.log('this.props', this.props);
         // defining variables
@@ -66,7 +22,7 @@ class CartItem extends React.Component{
                         alt="Increase"
                          className="action-icons" 
                          src="https://image.flaticon.com/icons/png/512/1828/1828817.png"
-                         onClick= {this.increaseQuantity}
+                         onClick= {()=> this.props.onIncreaseQuantity(this.props.product)}
                          />
                         <img
                          alt="Decrease" 
