@@ -19,7 +19,7 @@ class CartItem extends React.Component{
         // // setstate form 1
         // this.setState({
         //     qty: this.state.qty + 1
-        // });
+        // },()=>{});    //adding callback
     
         // setstate form 2 -if prevstate requied use this
         this.setState((prevState)=>{
