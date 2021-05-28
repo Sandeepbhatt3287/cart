@@ -3,13 +3,15 @@ import CartItem from './CartItem';
 
 class Cart extends React.Component{
     render ()
-    { return(
+    {  const arr =[1,2,3,4,5];
+        return(
         <div  className='cart'>
-            <CartItem/>
-            <CartItem/>
-            <CartItem/>
-            <CartItem/>
-            <CartItem/>
+            { 
+            // rendering a list
+                arr.map((item)=>{
+                    return item + 5
+                })
+            }
         </div>
     );
 
