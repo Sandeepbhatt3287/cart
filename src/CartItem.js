@@ -6,6 +6,7 @@ class CartItem extends React.Component{
           console.log('this.props', this.props);
         // defining variables
         const {price,title,qty,} = this.props.product;
+        const {product,onDecreaseQuantity,onIncreaseQuantity}= this.props ;
         return(
 
             <div className="cart-item">
@@ -22,13 +23,13 @@ class CartItem extends React.Component{
                         alt="Increase"
                          className="action-icons" 
                          src="https://image.flaticon.com/icons/png/512/1828/1828817.png"
-                         onClick= {()=> this.props.onIncreaseQuantity(this.props.product)}
+                         onClick= {()=> onIncreaseQuantity(product)}
                          />
                         <img
                          alt="Decrease" 
                          className="action-icons" 
                          src="https://image.flaticon.com/icons/png/128/2569/2569198.png"
-                         onClick={this.decreaseQuantity}
+                         onClick={()=>onDecreaseQuantity(product)}
                          />
                         <img 
                         alt="Delete" 
