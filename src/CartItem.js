@@ -5,7 +5,7 @@ const CartItem =(props) => {
 
           
         // defining variables
-        const {price,title,qty,} = this.props.product;
+        const {price,title,qty,} = props.product;
 
         // using this.props
         const {
@@ -13,12 +13,12 @@ const CartItem =(props) => {
             onDecreaseQuantity,
             onIncreaseQuantity,
             onDeleteProduct
-        }= this.props ;
+        } = props ;
         return(
 
             <div className="cart-item">
                 <div className="left-block">
-                     < img style={styles.image}/>
+                     < img style={styles.image} />
                 </div>
                 <div className="right-block">
                     <div style={{fontSize:25}}>{title}</div>
