@@ -1,9 +1,9 @@
 import React from 'react';
 
-class CartItem extends React.Component{
-   
-       render(){
-          console.log('this.props', this.props);
+// chaging into functional component
+const CartItem =(props) => {
+
+          
         // defining variables
         const {price,title,qty,} = this.props.product;
 
@@ -48,7 +48,7 @@ class CartItem extends React.Component{
                 </div>
             </div>
         );
-    }
+    
 }
 
 const styles = {

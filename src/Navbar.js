@@ -1,9 +1,9 @@
 import React from 'react';
 
-class Navbar extends React.Component{
-   
-       render(){
-         
+// chaging into functional component
+
+const Navbar= (props) => {
+        
         return(
 
             <div style={styles.nav}>
@@ -14,7 +14,6 @@ class Navbar extends React.Component{
                 
             </div>
         );
-    }
 }
 
 const styles = {
@@ -27,7 +26,8 @@ const styles = {
         background:'aqua',
         display:'flex',
         justifyContent:'flex-end',
-        alignItems:'center'
+        alignItems:'center',
+        borderRadius :'20px'
     },
     cartIconContainer:{
         position:'relative'
