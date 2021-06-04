@@ -25,9 +25,15 @@ class App extends React.Component {
       .then((snapshot)=>{
         console.log(snapshot);
 
-        snapshot.docs.map{(doc)=>{
+        snapshot.docs.map((doc)=>{
           console.log(doc.data())
-        }}
+        });
+        const products = snapshot.docs.map((doc)=> {
+          return doc.data();
+        })
+        this.setState({
+          products 
+        })
       })
 
     }
