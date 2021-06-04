@@ -29,7 +29,11 @@ class App extends React.Component {
           console.log(doc.data())
         });
         const products = snapshot.docs.map((doc)=> {
-          return doc.data();
+          
+          const data = doc.data();
+          data['id'] = doc.id;
+
+          return data;
         })
         this.setState({
           products 
