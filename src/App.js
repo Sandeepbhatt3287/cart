@@ -1,7 +1,7 @@
 import React from 'react';
 import Cart from './Cart';
 import Navbar from './Navbar';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 
 class App extends React.Component {
   // defining constructor 
@@ -75,11 +75,24 @@ class App extends React.Component {
    console.log('Heyy please inc the qty of ',product);
         const{products}=this.state;
    const index = products.indexOf(product);
-   products[index].qty +=1;
+  //  products[index].qty +=1;
 
-   this.setState({
-       products
+  //  this.setState({
+  //      products
+
+  const docRef =this.db.collection('products').doc(products[index].id);
+
+   docRef
+   .update({
+     qty: products[index].qty+1
    })
+   .then(()=>{
+     console.log('udateed successfully')
+   })
+   .catch((error)=>{
+     console.log('Error:',error);
+                  })
+    
     }
     // taking care of decrease quantity
     handleDecreaseQuantity = (product)=>{
@@ -156,7 +169,7 @@ class App extends React.Component {
   return (
     <div className="App">
       <Navbar count={this.getCartCount()}/>
-      <button onClick={this.addProduct} style={{padding:20,fontSize:20}}>Add a product </button>
+      <button onClick={this.addProduct} style={{padding:10,fontSize:15,marginLeft:10}}>Add a product </button>
      <Cart
      products={products}
       onIncreaseQuantity={this.handleIncreaseQuantity}
