@@ -121,12 +121,26 @@ class App extends React.Component {
      console.log('Error:',error);
                   })
     }
+
+    // delete product
     handleDeleteProduct =(id)=> {
         const {products} = this.state;
-        const items = products.filter((item)=> item.id !==id);   //[{}] arrey contains product
-        this.setState({
-            products:items
+        // const items = products.filter((item)=> item.id !==id);   //[{}] arrey contains product
+        // this.setState({
+        //     products:items
+        // })
+      
+        const docRef = this.db.collection('products').doc(id);
+
+        docRef
+        .delete()
+        .then(()=>{
+          console.log('Deleted successfully')
         })
+        .catch((error)=>{
+          console.log('Error:',error);
+                       })
+
     }
 
 
