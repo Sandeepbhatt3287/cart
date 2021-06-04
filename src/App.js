@@ -9,7 +9,8 @@ class App extends React.Component {
         super();
         this.state ={
             // using rendering
-            products:  []  //fetching the data from firebase
+            products:  [] ,
+            loading : true //fetching the data from firebase
             
         }
         // this.increaseQuantity.bind(this);
@@ -36,7 +37,8 @@ class App extends React.Component {
           return data;
         })
         this.setState({
-          products 
+          products,
+          loading: false 
         })
       })
 
@@ -106,7 +108,7 @@ class App extends React.Component {
     }
 
   render () {
-    const {products} = this.state;
+    const {products,loading} = this.state;
   return (
     <div className="App">
       <Navbar count={this.getCartCount()}/>
@@ -116,7 +118,8 @@ class App extends React.Component {
       onDecreaseQuantity={this.handleDecreaseQuantity}
       onDeleteProduct={this.handleDeleteProduct}
      />
-     <div>Total: {this.getCartTotal()}</div>
+     {loading && <h1>Loading products .....</h1>}
+     <div style={{padding :10, fontSize: 20}}>Total: {this.getCartTotal()}</div>
     </div>
   );
   }
